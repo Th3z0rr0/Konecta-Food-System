@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">	
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />   
+	<title>FoodSystem</title>
+</h:head>
+<h:body>
+	<h2>
+		<h:outputText value="Lista de Productos"></h:outputText>
+	</h2>
+	
+	<h:form>
+		<h:commandButton action="#{productoBean.create()}" value="Nuevo Producto"></h:commandButton>
+		<h:dataTable value="#{productoBean.obtenerProductos()}" var="producto" border="1">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputText value="#{producto.id}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				<h:outputText value="#{producto.name}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Referencia</f:facet>
+				<h:outputText value="#{producto.reference}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Precio</f:facet>
+				<h:outputText value="#{producto.price}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Peso</f:facet>
+				<h:outputText value="#{producto.weight}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Categoría</f:facet>
+				<h:outputText value="#{producto.category}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Stock</f:facet>
+				<h:outputText value="#{producto.stock}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Fecha de Creación</f:facet>
+				<h:outputText value="#{producto.created_at}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				<h:commandButton action="#{productoBean.edit(producto.id)}" value="Editar"></h:commandButton>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<h:commandButton action="#{productoBean.delete(producto.id)}" value="Eliminar"></h:commandButton>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Vender</f:facet>
+				<h:commandButton action="#{productoBean.sellProduct(producto.id)}" value="Vender"></h:commandButton>
+			</h:column>
+			
+		</h:dataTable>	
+	</h:form>
+	
+	
+</h:body>
+</html>

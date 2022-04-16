@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">	
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />    
+    <title>Nuevo Producto </title>
+</h:head>
+<h:body>
+    <h:form>
+    	<h:panelGrid columns="2" cellspacing="20" border="1">
+    		<f:facet name="header">
+    			<h:outputText value = "Nuevo Producto"></h:outputText>
+    		</f:facet>
+    		
+    		
+    		
+    		<h:outputText value="Nombre"></h:outputText>
+    		<h:inputText value="#{producto.name}"></h:inputText>
+    		
+    		<h:outputText value="Referencía"></h:outputText>
+    		<h:inputText value="#{producto.reference}"></h:inputText>
+    		
+    		<h:outputText value="Categoría"></h:outputText>
+    		<h:inputText value="#{producto.category}"></h:inputText>
+    		
+    		<h:outputText value="Precio"></h:outputText>
+    		<h:inputText value="#{producto.price}"></h:inputText>
+    		
+    		<h:outputText value="Peso"></h:outputText>
+    		<h:inputText value="#{producto.weight}"></h:inputText>
+    		
+    		<h:outputText value="Stock"></h:outputText>
+    		<h:inputText value="#{producto.stock}"></h:inputText>
+    		
+    		<f:facet name="footer">
+    			<h:commandButton action="#{productoBean.save(producto)}" value="Crear"></h:commandButton>
+    		</f:facet>
+    		
+    	</h:panelGrid>
+    	
+    </h:form>
+</h:body>
+</html>
